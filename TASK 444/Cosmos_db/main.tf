@@ -48,6 +48,7 @@ resource "azurerm_cosmosdb_sql_database" "main" {
     location          = var.location
     failover_priority = 0
   }
+  access_key_metadata_writes_enabled = false
 }
 resource "azurerm_log_analytics_cluster" "example" {
   name                = "example-cluster"
@@ -72,4 +73,5 @@ resource "azurerm_log_analytics_cluster" "example" {
   enable_private_endpoint       = true
   virtual_network_name          = "RIMS"
   private_subnet_address_prefix = [var.private_ip_allocation]
+ var.private_ip_allocation]
  
